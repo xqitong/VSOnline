@@ -1,6 +1,7 @@
 using System;
 using MyDelegate;
 using MulticastDelegate;
+using System.Threading;
 namespace workspace
 {
     class Program
@@ -27,9 +28,18 @@ namespace workspace
             Action action1 = new Action(stu1.DoHomeWork);
             Action action2 = new Action(stu2.DoHomeWork);
             Action action3 = new Action(stu3.DoHomeWork);
-            action1 += action2;
-            action1 += action3;
-            action1.Invoke();
+            //
+            //action1.BeginInvoke(null,null);
+            //action2.BeginInvoke(null,null);
+            //action2.BeginInvoke(null,null);
+            //action3.BeginInvoke(null,null);
+
+            for(int i = 0; i <10; i++)
+            {
+                Console.ForegroundColor = ConsoleColor.Cyan;
+                Console.WriteLine("Main thread{0}",i);
+                Thread.Sleep(1000);
+            }
             
         }
     }

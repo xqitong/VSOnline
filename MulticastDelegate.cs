@@ -14,8 +14,9 @@ class Student
         {
             Console.ForegroundColor = this.PenColor;
             Console.WriteLine("Student {0} doing homework {1} hour(s).",this.ID,i);
-            Thread.Sleep(1000);
+            Thread.Sleep(500);
         }
      }
 }
+
 }
